@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import authRoutes from './routes/auth.js';
-
+import profileRoutes from './routes/profiles.js';
 dotenv.config();
 
 const app = express();
@@ -19,7 +19,7 @@ app.get('/test', (req, res) => {
   res.json({ message: 'Test endpoint works' });
 });
 
-
+app.use('/v1/profiles', profileRoutes);
 app.use('/v1/auth', authRoutes);
 
 app.listen(PORT, () => {
