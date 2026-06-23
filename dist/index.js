@@ -7,13 +7,13 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
-console.log('✅ Auth routes imported:', authRoutes);
 app.get('/health', (req, res) => {
     res.json({ status: 'OK', timestamp: new Date() });
 });
-console.log('Mounting auth routes...');
+app.get('/test', (req, res) => {
+    res.json({ message: 'Test endpoint works' });
+});
 app.use('/v1/auth', authRoutes);
-console.log('✅ Auth routes mounted');
 app.listen(PORT, () => {
     console.log(`🚀 Diego's Connect API running on port ${PORT}`);
 });
