@@ -1,3 +1,4 @@
+import accountRoutes from './routes/account.js';
 import adminRoutes from './routes/admin.js';
 import safetyRoutes from './routes/safety.js';
 import photoRoutes from './routes/photos.js';
@@ -28,6 +29,7 @@ app.use('/v1/matches', messageRoutes);
 app.use('/v1/photos', photoRoutes);
 app.use('/v1/safety', safetyRoutes);
 app.use('/v1/admin', adminRoutes);
+app.use('/v1/account', accountRoutes);
 app.listen(PORT, () => {
     console.log(`🚀 Diego's Connect API running on port ${PORT}`);
 });
