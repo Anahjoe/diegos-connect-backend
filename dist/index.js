@@ -1,3 +1,4 @@
+import messageRoutes from './routes/messages.js';
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -20,6 +21,7 @@ app.use('/v1/auth', authRoutes);
 app.use('/v1/profiles', profileRoutes);
 app.use('/v1/discovery', discoveryRoutes);
 app.use('/v1/swipes', swipeRoutes);
+app.use('/v1/matches', messageRoutes);
 app.listen(PORT, () => {
     console.log(`🚀 Diego's Connect API running on port ${PORT}`);
 });
